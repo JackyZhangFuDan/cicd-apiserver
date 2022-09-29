@@ -1,0 +1,6 @@
+/vendor/
+/default.etcd/
+/.vscode/
+*.exe
+cicd-apiserver
+apiserver.local.config/
