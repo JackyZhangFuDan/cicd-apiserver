@@ -3,7 +3,9 @@ package v1alpha
 import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 // +genclient
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
 type JenkinsService struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,name=metadata"`
@@ -25,4 +27,13 @@ type JenkinsServiceStatus struct {
 type JenkinsServerInstance struct {
 	Cpu     int  `json:"cpu" protobuf:"int32,1,name=cpu"`
 	Running bool `json:"running" protobuf:"bool,2,name=running"`
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+type JenkinsServiceList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+
+	Items []JenkinsService `json:"items" protobuf:"bytes,2,rep,name=items"`
 }

@@ -26,3 +26,11 @@ type JenkinsServerInstance struct {
 	Cpu     int
 	Running bool
 }
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+type JenkinsServiceList struct {
+	metav1.TypeMeta
+	metav1.ListMeta
+
+	Items []JenkinsService
+}
