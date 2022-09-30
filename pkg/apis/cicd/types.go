@@ -27,6 +27,7 @@ type JenkinsServerInstance struct {
 	Running bool
 }
 
+// +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type JenkinsServiceList struct {
 	metav1.TypeMeta
