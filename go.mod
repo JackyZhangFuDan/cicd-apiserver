@@ -5,7 +5,7 @@ go 1.18
 require (
 	k8s.io/apimachinery v0.25.2
 	k8s.io/client-go v0.25.2
-	k8s.io/code-generator v0.25.1
+	k8s.io/code-generator v0.23.5
 	k8s.io/kube-openapi v0.0.0-20220803162953-67bda5d908f1
 )
 
