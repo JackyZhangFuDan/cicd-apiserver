@@ -54,8 +54,17 @@ func (jenkinsServiceStrategy) PrepareForCreate(ctx context.Context, obj runtime.
 
 }
 func (jenkinsServiceStrategy) Validate(ctx context.Context, obj runtime.Object) field.ErrorList {
+	errs := field.ErrorList{} //承载发现的错误
+
 	js := obj.(*cicd.JenkinsService)
-	return nil
+	if js.Spec.InstanceAmount > 10 {
+		errs = append(errs, field.TooMany(field.NewPath("spec").Key("instanceamount"), js.Spec.InstanceAmount, 10))
+	}
+	if len(errs) > 0 {
+		return errs
+	} else {
+		return nil
+	}
 }
 func (jenkinsServiceStrategy) WarningsOnCreate(ctx context.Context, obj runtime.Object) []string {
 	return []string{}
