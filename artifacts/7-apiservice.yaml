@@ -1,0 +1,13 @@
+apiVersion: apiregistration.k8s.io/v1
+kind: APIService
+metadata:
+  name: v1alpha.autobusi.group.cicd
+spec:
+  insecureSkipTLSVerify: true
+  group: autobusi.group.cicd
+  groupPriorityMinimum: 1000
+  versionPriority: 15
+  service:
+    name: cicd-apiserver
+    namespace: cicd-apiserver
+  version: v1alpha

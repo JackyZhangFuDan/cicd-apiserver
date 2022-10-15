@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cicd-apiserver-clusterrole
+rules:
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["get","watch","list"]
+- apiGroups: ["admissionregistration.k8s.io"]
+  resources: ["mutatingwebhookconfigurations","validatingwebhookconfigurations"]
+  verbs: ["get","watch","list"]
