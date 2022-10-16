@@ -1,7 +1,105 @@
 apiVersion: autobusi.group.cicd/v1alpha
 kind: JenkinsService
 metadata:
-  name: "the-first-js"
+  name: the-js-1
 spec:
-  InstanceAmount: 2
-  InstanceCpu: 2
+  instanceamount: 2
+  instancecpu: 2
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-2
+spec:
+  instanceamount: 2
+  instancecpu: 2
+
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-3
+spec:
+  instanceamount: 2
+  instancecpu: 2
+  
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-4
+spec:
+  instanceamount: 2
+  instancecpu: 2
+  
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-5
+spec:
+  instanceamount: 2
+  instancecpu: 2
+  
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-6
+spec:
+  instanceamount: 2
+  instancecpu: 2
+
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-7
+spec:
+  instanceamount: 2
+  instancecpu: 2
+  
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-8
+spec:
+  instanceamount: 2
+  instancecpu: 2
+  
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-9
+spec:
+  instanceamount: 2
+  instancecpu: 2
+  
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-10
+spec:
+  instanceamount: 2
+  instancecpu: 2
+
+---
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: the-js-will-generate-error
+spec:
+  instanceamount: 2
+  instancecpu: 2
