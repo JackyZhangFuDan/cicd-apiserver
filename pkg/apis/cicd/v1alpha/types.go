@@ -14,7 +14,7 @@ type JenkinsService struct {
 
 type JenkinsServiceSpec struct {
 	InstanceAmount int `json:"instanceamount,omitempty" protobuf:"int32,1,opt,name=instanceamount"`
-	InstanceCpu    int `json:"metadata,omitempty" protobuf:"int32,2,opt,name=instancecpu"`
+	InstanceCpu    int `json:"instancecpu,omitempty" protobuf:"int32,2,opt,name=instancecpu"`
 }
 
 type JenkinsServiceStatus struct {

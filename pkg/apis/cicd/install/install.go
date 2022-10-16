@@ -12,5 +12,5 @@ import (
 func Install(scheme *runtime.Scheme) {
 	util.Must(cicd.AddToScheme(scheme))
 	util.Must(v1alpha.AddToScheme(scheme))
-	util.Must(scheme.SetVersionPriority(v1alpha.SchemeGroupVersion, cicd.SchemeGroupVersion))
+	util.Must(scheme.SetVersionPriority(v1alpha.SchemeGroupVersion))
 }
