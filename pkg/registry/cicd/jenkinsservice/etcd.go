@@ -17,13 +17,13 @@ func NewREST(scheme *runtime.Scheme, optsGetter generic.RESTOptionsGetter) (*reg
 		NewFunc:                  func() runtime.Object { return &cicd.JenkinsService{} },
 		NewListFunc:              func() runtime.Object { return &cicd.JenkinsServiceList{} },
 		PredicateFunc:            MatchJenkinsService,
-		DefaultQualifiedResource: cicd.Resource("jenkinsservice"),
+		DefaultQualifiedResource: cicd.Resource("jenkinsservices"),
 
 		CreateStrategy: strategy,
 		UpdateStrategy: strategy,
 		DeleteStrategy: strategy,
 
-		TableConvertor: rest.NewDefaultTableConvertor(cicd.Resource("jenkinsservice")),
+		TableConvertor: rest.NewDefaultTableConvertor(cicd.Resource("jenkinsservices")),
 	}
 	options := &generic.StoreOptions{RESTOptions: optsGetter, AttrFunc: GetAttrs}
 	if err := store.CompleteWithOptions(options); err != nil {

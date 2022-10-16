@@ -10,6 +10,8 @@ import (
 	listers "cicd-apiserver/pkg/generated/listers/cicd/internalversion"
 
 	"k8s.io/apiserver/pkg/admission"
+
+	"k8s.io/apimachinery/pkg/labels"
 )
 
 // plugin必须实现admission.Interface接口，而内嵌的admission.Handler结构体就实现了
@@ -46,7 +48,7 @@ func (jsp *JenkinsServicePlugin) Validate(ctx context.Context, a admission.Attri
 	// 下面就可以进行我们期望的校验了
 	// 区别于registry部分strategy中的valid strategy，此处的校验更多是多实体之间的关联正确性，而不是单个jenkins service内容的正确
 	// 例如，我们规定整个系统中只能存在10 个JenkinsService对象，多了不行，就可以在这里做检查
-	existedJenkinsServices, err := jsp.jsLister.List(nil)
+	existedJenkinsServices, err := jsp.jsLister.List(labels.Everything())
 	if err != nil {
 		return admission.NewForbidden(a, fmt.Errorf("the plugin encounter internal error during retrieve jenkins service objects from api server"))
 	}
