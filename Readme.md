@@ -1,1 +1,1 @@
-代码生成
+install, register API Object等等
