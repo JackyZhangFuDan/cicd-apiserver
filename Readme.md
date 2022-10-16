@@ -1,1 +1,1 @@
-注册，安装API object等相关事宜
+增加Admission
