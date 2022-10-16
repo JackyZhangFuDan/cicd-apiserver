@@ -1,5 +1,7 @@
 # 部署API Server  
 
+编写dockerfile，以及必要的API Object定义文件，例如namespace, service account, role binding, deployment, service, apiservice...等等  
+
 ## 生成Docker镜像并推到仓库中  
 ```bash
 cd ~/go/src/cicd-apiserver
