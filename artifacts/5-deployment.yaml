@@ -14,14 +14,14 @@ spec:
     metadata:
       name: cicd-apiserver-pod
       labels:
-        cicd-apiserver: "true"
+        apiserver: "true"
     spec:
       serviceAccountName: apiserver
       containers:
       - name: cicd-apiserver
         image: jackyzhangfd/cicd-kube-apiserver:1.0
         imagePullPolicy: Always
-        command: ["/pizza-apiserver"]
+        command: ["/cicd-apiserver"]
         args:
         - --etcd-servers=http://localhost:2379
         - --cert-dir=/tmp/certs
