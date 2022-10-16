@@ -1,0 +1,7 @@
+apiVersion: autobusi.group.cicd/v1alpha
+kind: JenkinsService
+metadata:
+  name: "the-first-js"
+spec:
+  InstanceAmount: 2
+  InstanceCpu: 2
