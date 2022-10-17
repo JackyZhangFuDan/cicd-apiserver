@@ -1,45 +1,31 @@
-# 部署API Server  
+# 创建Aggregated API Server  
 
-编写dockerfile，以及必要的API Object定义文件，例如namespace, service account, role binding, deployment, service, apiservice...等等  
+众所周知Kubernetes提供了诸多扩展API Server的方式，比较常用的一种是CRD - Customer Resource Definition，它已经可以满足绝大多数的扩展需求。而通过自定义Aggregarted API Server的方式可以获得最大程度的灵活性，只是门槛有点儿高。这个仓库包含了创建Kubernete Aggregated API Server的代码，它演示了如何从头开始建立自己的API Server，放入集群来扩展API Server。  
 
-## 生成Docker镜像并推到仓库中  
-```bash
-cd ~/go/src/cicd-apiserver
-docker build -t jackyzhangfd/cicd-kube-apiserver:1.0 .  
-docker push jackyzhangfd/cicd-kube-apiserver:1.0  
-```
+注意：你需要仔细思考CRD是否已经足以满足你的需求，不要一上来就走Aggregated API Server这条路。  
 
-## 测试API Server镜像的正确性  
-```bash
-cd ./artifacts/deploy
-kubectl apply -f .  
-kubectl describe pod <我们的api server所在pod的名字>
-```
-第一条命令会创建出部署涉及到的所有API Objects，例如namesapce等，大多数不会有问题；第二条命令重点关注API Server所在的pod：首先看pod中镜像的拉取是否成功，不成功的可能需要额外配置；其次看各个container是否启动成功了。由于代码bug等，一般是我们自己api server的那个container启动会出错，为了看启动失败的原因需要：  
-```bash
-kubectl logs <我们的api server所在pod的名字> cicd-apiserver
-```
-来看那个container的log信息  
+我通过不同分支来展示server创建的整个过程，每个分支代表一个主题，顺序不能乱因为前后有依赖关系。通过我在B站上的相关视频你可以更好理解这些代码： <....>
 
-Tips：设置集群，从而能从docker hub来拉取镜像  
-https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/  
-https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry  
-（docker hub在minikube环境没问题,不用配置就可拉取）  
+## Branch master  
+最新的完整代码  
 
-当我们的pod，service都启动好了以后，看一看自定义API Resource “jenkinsservices”出没出现在server的resource列表中：  
-```bash
-kubectl get api-resources
-```
+## Branch [phase-1](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-1/)  
+初始化工程，建立所需要的API Object  
 
-## 创建API Object 实例  
-作为测试，我们创建一下Aggregated API Server中定义的API Object ‘JenkinsService’：  
-```bash
-cd ./artifacts/testcases
-kubectl apply -f .
-```
-注意：你可能需要等Server启动完全后再执行创建命令，否则它还没有准备好呢。最好等5分钟  
+## Branch [pahse-2](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-2/)  
+代码生成，根据tag为建立的API Object生成配套代码  
 
-上述命令会创建出10个JenkinsService实例，第11个会失败，因为我们在admission里控制了数量，这里的失败是正确的。成功后，可以用如下命令可以列出创建成功的事例：  
-```bash
-kubectl get jenkinsservices
-```
+## Branch [phase-3](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-3/)  
+向scheme注册API Object  
+
+## Branch [phase-4](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-4/)  
+存储API Object到ETCD  
+
+## Branch [phase-5](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-5/)  
+增加Admission到Aggregated API Server  
+
+## Branch [phase-6](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-6/)  
+添加代码生成web server  
+
+## Branch [phase-7](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-7/)  
+部署Aggregated API Server到集群，并启动  
