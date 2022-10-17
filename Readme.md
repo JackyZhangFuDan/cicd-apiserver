@@ -9,23 +9,23 @@
 ## Branch master  
 最新的完整代码  
 
-## Branch [phase-1](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-1/)  
+## Branch [phase-1](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-1/)  
 初始化工程，建立所需要的API Object  
 
-## Branch [pahse-2](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-2/)  
+## Branch [pahse-2](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-2/)  
 代码生成，根据tag为建立的API Object生成配套代码  
 
-## Branch [phase-3](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-3/)  
+## Branch [phase-3](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-3/)  
 向scheme注册API Object  
 
-## Branch [phase-4](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-4/)  
+## Branch [phase-4](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-4/)  
 存储API Object到ETCD  
 
-## Branch [phase-5](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-5/)  
+## Branch [phase-5](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-5/)  
 增加Admission到Aggregated API Server  
 
-## Branch [phase-6](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-6/)  
+## Branch [phase-6](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-6/)  
 添加代码生成web server  
 
-## Branch [phase-7](https://github.com/JackyZhangFuDan/cicd-apiserver/edit/phase-7/)  
+## Branch [phase-7](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-7/)  
 部署Aggregated API Server到集群，并启动  
