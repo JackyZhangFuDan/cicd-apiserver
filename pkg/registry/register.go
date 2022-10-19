@@ -7,6 +7,7 @@ import (
 	"k8s.io/apiserver/pkg/registry/rest"
 )
 
+// 直接把Store内嵌，相当于“改名”为REST，是由于store这个结构体也是最终响应Restful请求的实体
 type REST struct {
 	*gRegistry.Store
 }
