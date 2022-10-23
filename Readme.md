@@ -15,4 +15,4 @@ go mod init cicd-apiserver
 
 ## 开始编码  
 主要部分在文件夹pkg/apis/cicd下。
-请参考我在B站上的视频
+请参考我在B站上的视频:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)
