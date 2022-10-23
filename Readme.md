@@ -5,6 +5,8 @@ Admission机制会在一个HTTP请求的处理过程后期被触发，主要用�
 - validation阶段  
 这一阶段不能修改请求内容，只是对它的正确性进行校验，如果校验不过请求也会被拒绝。  
 
+我的B站视频:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
+
 ## 制作Admission Plugin  
 一个Plugin是实现了admission.Interface接口的结构体，它可以同时实现mutaion阶段和validation阶段的逻辑，例如validation能力只需实现admission.ValidationInterface接口。代码：  
 pkg/admission/plugin/jsplugins.go  
