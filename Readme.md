@@ -3,7 +3,7 @@
 
 具体来说，我们需要编写dockerfile，以及必要的API Object定义文件，例如namespace, service account, role binding, deployment, service, apiservice...等等。具体yaml：  
 artifacts/deploy
-具体可以参考我在B站上的视频:<...>  
+具体可以参考我在B站上的视频:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)   
 
 ## 生成Docker镜像并推到仓库中  
 dockerfile我已经写好了，大家可以参看根目录下的Dockerfile  
