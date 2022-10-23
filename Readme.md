@@ -2,6 +2,8 @@
 经过前序步骤，我们把Aggregated API Server的内容构建起来了，现在我们需要给它套上一层web server的包装，那么它就可以作为一个web server去响应http 请求了。  
 每个Aggregated API Server都会基于Kubernetes的子项目apiserver（也叫generic server），Kubernetes的API Server自己也是如此。generic server内含了一个Aggregated API Server 90%的逻辑，它也包含了web server的基础设施所以我们并不需要做太多工作。  
 
+我的B站视频:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
+
 ## 制作Server  
 虽然Generic Server提供了大部分的基础设施，我么你还是需要把它包裹一下，形成自己的API Server实例，其中最为重要的环节是把我们之前制作的API Object注入到Web Server中，从而Web Server能响应关于这些object的Restful请求。这也是我们注入自己特有配置的时机，只是我们在示例程序中没有加入任何自有config。  
 制作的整个过程大概就是：制定config结构体（其中内嵌了generic config）-> 写进一步完善config数据的方法 -> 由完善后的config结构体创建出Server实例。代码：  
