@@ -1,5 +1,6 @@
 # API Object的存储  
-API Server需要把支持的API Object实例存入DB - ETCD - 中，Generic API Server已经帮我们的Aggregated API Server完成了大部分繁琐复杂的数据库相关处理，我们只要实现一些Interface来注入我们的逻辑就ok了。讲解参见我的B站视频<...>  
+API Server需要把支持的API Object实例存入DB - ETCD - 中，Generic API Server已经帮我们的Aggregated API Server完成了大部分繁琐复杂的数据库相关处理，我们只要实现一些Interface来注入我们的逻辑就ok了。讲解参见我的B站视频:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
+
 代码全部在pkg/registry文件夹内  
 
 ## 实现数据库存储时各个策略的接口  
