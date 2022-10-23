@@ -4,7 +4,7 @@
 
 注意：你需要仔细思考CRD是否已经足以满足你的需求，不要一上来就走Aggregated API Server这条路。  
 
-我通过不同分支来展示server创建的整个过程，每个分支代表一个主题，顺序不能乱因为前后有依赖关系。通过我在B站上的相关视频你可以更好理解这些代码： <....>
+我通过不同分支来展示server创建的整个过程，每个分支代表一个主题，顺序不能乱因为前后有依赖关系。通过我在B站上的相关视频你可以更好理解这些代码:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
 
 ## Branch master  
 最新的完整代码  
