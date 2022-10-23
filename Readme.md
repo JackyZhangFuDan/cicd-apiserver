@@ -1,5 +1,5 @@
 # 代码生成  
-这一步我们聚焦生成代码。详细解释请参见我在B站的视频：<...>  
+这一步我们聚焦生成代码。详细解释请参见我在B站的视频：[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)
 
 ## 增加标签  
 我们需要在doc.go等代码中加入指导代码生成的标签。  
