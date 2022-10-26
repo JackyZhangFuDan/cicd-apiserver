@@ -19,13 +19,13 @@
 向scheme注册API Object  
 
 ## Branch [phase-4](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-4/)  
-存储API Object到ETCD  
+存储API Object到ETCD，并处理Restful过来的对AO的操作  
 
 ## Branch [phase-5](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-5/)  
 增加Admission到Aggregated API Server  
 
 ## Branch [phase-6](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-6/)  
-添加代码生成web server  
+添加代码，生成web server  
 
 ## Branch [phase-7](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-7/)  
 部署Aggregated API Server到集群，并启动  
