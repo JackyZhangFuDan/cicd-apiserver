@@ -134,6 +134,10 @@ func (ccfg completedConfig) NewServer() (*CicdServer, error) {
 		}()
 		return nil
 	})
+	genericServer.AddPostStartHookOrDie("cicd-apiserver-informer", func(context genericapiserver.PostStartHookContext) error {
+		jsInformerFactory.Start(context.StopCh)
+		return nil
+	})
 
 	return server, nil
 }

@@ -99,6 +99,7 @@ func (c *Controller) processNextWorkItem(ctx context.Context) bool {
 	if err == nil {
 		//处理完毕没出错，告诉queue清理这个key相关的追踪记录，例如失败计数等
 		c.queue.Forget(key)
+		klog.Infof("Finish processing key %s", key)
 		return true
 	}
 	//上报错误，这个调用允许插拔错误处理逻辑，例如集群监控
@@ -126,7 +127,7 @@ func (c *Controller) sync(ctx context.Context, key string) (err error) {
 
 	var replicas int32
 	replicas = int32(js.Spec.InstanceAmount)
-	var selector map[string]string
+	selector := map[string]string{}
 	selector["type"] = "jenkinsservice"
 	selector["jsname"] = name
 
@@ -149,8 +150,9 @@ func (c *Controller) sync(ctx context.Context, key string) (err error) {
 				Spec: v1.PodSpec{
 					Containers: []v1.Container{
 						{
-							Image:           "jenkins/jenkins:lts-jdk17",
-							ImagePullPolicy: "Always",
+							Name:            "jenkinsforjs",
+							Image:           "nginx:latest",
+							ImagePullPolicy: "IfNotPresent",
 						},
 					},
 				},

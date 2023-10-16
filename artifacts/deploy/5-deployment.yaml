@@ -19,7 +19,7 @@ spec:
       serviceAccountName: apiserver
       containers:
       - name: cicd-apiserver
-        image: jackyzhangfd/cicd-kube-apiserver:1.0
+        image: jackyzhangfd/cicd-kube-apiserver:2.0
         imagePullPolicy: Always
         command: ["/cicd-apiserver"]
         args:

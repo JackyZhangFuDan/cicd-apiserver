@@ -12,7 +12,7 @@ kind: JenkinsService
 metadata:
   name: the-js-2
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
 
 
@@ -22,7 +22,7 @@ kind: JenkinsService
 metadata:
   name: the-js-3
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
   
 
@@ -32,7 +32,7 @@ kind: JenkinsService
 metadata:
   name: the-js-4
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
   
 
@@ -42,7 +42,7 @@ kind: JenkinsService
 metadata:
   name: the-js-5
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
   
 
@@ -52,7 +52,7 @@ kind: JenkinsService
 metadata:
   name: the-js-6
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
 
 
@@ -62,7 +62,7 @@ kind: JenkinsService
 metadata:
   name: the-js-7
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
   
 
@@ -72,7 +72,7 @@ kind: JenkinsService
 metadata:
   name: the-js-8
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
   
 
@@ -82,7 +82,7 @@ kind: JenkinsService
 metadata:
   name: the-js-9
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
   
 
@@ -92,7 +92,7 @@ kind: JenkinsService
 metadata:
   name: the-js-10
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
 
 ---
@@ -101,5 +101,5 @@ kind: JenkinsService
 metadata:
   name: the-js-will-generate-error
 spec:
-  instanceamount: 2
+  instanceamount: 1
   instancecpu: 2
