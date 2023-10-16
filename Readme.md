@@ -1,31 +1,4 @@
-# 创建Aggregated API Server  
+# 创建控制器  
 
-众所周知Kubernetes提供了诸多扩展API Server的方式，比较常用的一种是CRD - Customer Resource Definition，它已经可以满足绝大多数的扩展需求。而通过自定义Aggregarted API Server的方式可以获得最大程度的灵活性，只是门槛有点儿高。这个仓库包含了创建Kubernete Aggregated API Server的代码，它演示了如何从头开始建立自己的API Server，放入集群来扩展API Server。  
-
-注意：你需要仔细思考CRD是否已经足以满足你的需求，不要一上来就走Aggregated API Server这条路。  
-
-我通过不同分支来展示server创建的整个过程，每个分支代表一个主题，顺序不能乱因为前后有依赖关系。通过我在B站上的相关视频你可以更好理解这些代码:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
-
-## Branch master  
-最新的完整代码  
-
-## Branch [phase-1](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-1/)  
-初始化工程，建立所需要的API Object  
-
-## Branch [pahse-2](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-2/)  
-代码生成，根据tag为建立的API Object生成配套代码  
-
-## Branch [phase-3](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-3/)  
-向scheme注册API Object  
-
-## Branch [phase-4](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-4/)  
-存储API Object到ETCD，并处理Restful过来的对AO的操作  
-
-## Branch [phase-5](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-5/)  
-增加Admission到Aggregated API Server  
-
-## Branch [phase-6](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-6/)  
-添加代码，生成web server  
-
-## Branch [phase-7](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-7/)  
-部署Aggregated API Server到集群，并启动  
+这部分会为API JenkinsService创建控制器。为了方便，这个控制器没有做成单独可执行程序，而是效仿扩展Server，把它合并在了API Server可执行程序内。  
+这个控制器是示意性质的，点到为止。它能达到的效果：为每个JenkinsService API实例创建出一个Deployment，跑NGINX这个镜像。为了使得它能够工作，还需要给本Aggregated Server的Service Account授予操作Deployment的权限，这是在rolecluster.yaml文件中进行的，需要将改变应用到集群。
