@@ -4,7 +4,7 @@
 
 注意：你需要仔细思考CRD是否已经足以满足你的需求，不要一上来就走Aggregated API Server这条路。  
 
-我通过不同分支来展示server创建的整个过程，每个分支代表一个主题，顺序不能乱因为前后有依赖关系。通过我在B站上的相关视频你可以更好理解这些代码:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
+我通过不同分支来展示server创建的整个过程，每个分支代表一个主题，顺序不能乱因为前后有依赖关系。通过我在B站上的相关视频你可以更好理解这些代码（视频只包含phase-1到phase-7）:[Kubernetes源码开发之旅四：Aggregated API Server](https://www.bilibili.com/video/BV1Ve4y1U7oE/?vd_source=9304721f2aeb71f0f883054e229f5b22)  
 
 ## Branch master  
 最新的完整代码  
@@ -29,3 +29,6 @@
 
 ## Branch [phase-7](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-7/)  
 部署Aggregated API Server到集群，并启动  
+
+## Branch [phase-8](https://github.com/JackyZhangFuDan/cicd-apiserver/tree/phase-8/)  
+制作控制器，将逻辑添加进Aggregated API Server的可执行程序中，从而为JenkinsService对象创建出Deployment  
