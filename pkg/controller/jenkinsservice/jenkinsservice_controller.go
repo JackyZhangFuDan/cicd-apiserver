@@ -159,6 +159,11 @@ func (c *Controller) sync(ctx context.Context, key string) (err error) {
 			},
 		},
 	}
+	_, err = c.coreAPIClient.AppsV1().Deployments(namespace).Get(ctx, d.Name, metav1.GetOptions{})
+	if err == nil {
+		klog.Infof("Deployment for Jenkins Service %s already exists", key)
+		return nil
+	}
 	_, err = c.coreAPIClient.AppsV1().Deployments(namespace).Create(ctx, &d, metav1.CreateOptions{})
 	if err != nil {
 		klog.ErrorS(err, "Failed when creating deployment for Jenkins Service")
